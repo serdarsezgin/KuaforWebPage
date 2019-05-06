@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <title>giris yap</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+    </h:head>
+    <h:body>
+        <h:form>
+
+            <div class="container">
+                <img class="mx-auto d-block" src="https://www.ambiance-sticker.com/images/Image/sticker-hair-salon-accessoires-de-coiffure-ambiance-sticker-KC6644.png" alt="Chania" width="160" height="145"></img>
+            </div>    	
+
+           <a class="fb-ic mr-3" role="button" href="fb.com" style="color: blue; margin-left: 1400px;" ><i class="fab fa-lg fa-facebook-f"></i></a>
+            <a class="tw-ic mr-3" role="button" href="twitter.com/twitter"><i class="fab fa-lg fa-twitter"></i></a>
+            <a class="ins-ic mr-3" role="button" href="instagram.com" style="color: black"><i class="fab fa-lg fa-instagram"></i></a>
+         
+
+            
+
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark m-0 sticky-top">
+                <h:link class="navbar-brand" style="color: white;" value="Anasayfa" outcome="/index.xhtml" />
+
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <h:link class = "nav-link pl-3" style="color: white;" value="Randevu Al" outcome="/secured/randevu" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Hakkımızda" outcome="/hakkimizda" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ücretler" outcome="/ucretler" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ekibimiz" outcome="/ekibimiz" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ürünler" outcome="/urunler" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Galeri" outcome="/galeri" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="İletişim" outcome="/iletisim" />
+
+                        </li>
+          
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+                        <h:link class="nav-link ml-2" style="color: white;" rendered="#{loginBean.userLoggedIn}" value="#{loginBean.kul_adi_2}" outcome="/iletisim" />
+                        
+                        <h:commandLink  class="nav-link pl-3" style="color: white; " rendered="#{loginBean.userLoggedIn}" value="Çıkış Yap" action="#{loginBean.doLogout()}" />
+                        <h:link class="nav-link pl-3 " style="color: white;" outcome="/secured/admin" ><i class="fas fa-user-cog"></i></h:link>
+                        
+                    </div>
+
+                </div>
+            </nav>
+
+            <div class="card container mt-4 col-sm-4">
+                <article class="card-body">
+                    <h4 class="card-title text-center mb-4 mt-1">Giriş Yap</h4>
+                    <hr></hr>
+                    <p class="text-success text-center">Kullanıcı adı ve şifrenizi girin</p>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                </div>
+                                <h:inputText class="form-control" p:placeholder="Kullanıcı Adı" id="kuladi" required="true"
+                                             requiredMessage="Kullanıcı adını giriniz"
+                                             value="#{loginBean.kuladigiris}" />
+                            </div> <!-- input-group.// -->
+                        </div> <!-- form-group// -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                </div>
+                                <h:inputSecret class="form-control" p:placeholder="Şifre Giriniz" id="sifre" required="true"
+                                               requiredMessage="Şifre giriniz"
+                                               value="#{loginBean.sifregiris}" />
+                            </div> <!-- input-group.// -->
+                        </div> <!-- form-group// -->
+                        <div class="form-group">
+                            <h:commandButton class="btn btn-primary btn-block" value="Giriş" action="#{loginBean.uyeGiris()}"/>
+                        </div> <!-- form-group// -->
+                        <p class="text-center">Üye değil misin?  <h:link value="Üye Ol" outcome="/faces/uyeol"/> </p>
+                </article>
+
+            </div> <!-- card.// -->
+
+
+        </h:form>
+    </h:body>
+</html>
+

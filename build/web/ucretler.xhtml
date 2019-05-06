@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>ücretler</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+    </h:head>
+    
+    <h:body style="background-color:graytext;">
+        <h:form>
+
+
+            <div class="container">
+                <img class="mx-auto d-block" src="https://www.ambiance-sticker.com/images/Image/sticker-hair-salon-accessoires-de-coiffure-ambiance-sticker-KC6644.png" alt="Chania" width="160" height="145"></img>
+            </div>
+
+            <a class="fb-ic mr-3" role="button" href="fb.com" style="color: blue; margin-left: 1400px;" ><i class="fab fa-lg fa-facebook-f"></i></a>
+            <a class="tw-ic mr-3" role="button" href="twitter.com/twitter"><i class="fab fa-lg fa-twitter"></i></a>
+            <a class="ins-ic mr-3" role="button" href="instagram.com" style="color: black"><i class="fab fa-lg fa-instagram"></i></a>
+
+
+
+
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark m-0 sticky-top">
+                <h:link class="navbar-brand" style="color: white;" value="Anasayfa" outcome="/index.xhtml" />
+
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <h:link class = "nav-link pl-3" style="color: white;" value="Randevu Al" outcome="/secured/randevu" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Hakkımızda" outcome="/hakkimizda" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ücretler" outcome="/ucretler" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ekibimiz" outcome="/ekibimiz" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ürünler" outcome="/urunler" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Galeri" outcome="/galeri" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="İletişim" outcome="/iletisim" />
+
+                        </li>
+
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+                        <h:link class="nav-link ml-2" style="color: white;" rendered="#{loginBean.userLoggedIn}" value="#{loginBean.kul_adi_2}" outcome="/iletisim" />
+                        <h:commandLink  class="nav-link pl-3" style="color: white; " rendered="#{!loginBean.userLoggedIn}" value="Giriş Yap" action="/girisyap" />
+                        <h:commandLink  class="nav-link pl-3" style="color: white; " rendered="#{loginBean.userLoggedIn}" value="Çıkış Yap" action="#{loginBean.doLogout()}" />
+                        <h:link class="nav-link pl-3 " style="color: white;" outcome="/secured/admin" ><i class="fas fa-user-cog"></i></h:link>
+
+                    </div>
+
+                </div>
+            </nav>
+
+
+            <div class="container">
+
+                <div class="card border-0 bg-dark   my-5">
+                    <div class="card-body p-5 b"> 
+
+                        <div class="card bg-dark text-white">
+
+
+                            <br></br><br></br><br></br>
+
+                            <h1 style="text-align:center;" ><i><strong><b>FİYAT LİSTESİ</b></strong></i></h1><br></br><br></br><br></br>
+
+                            <h4 style="text-align:center;" ><i><strong><b>SAÇ İŞLEMLERİ FİYAT LİSTESİ</b></strong></i></h4><br></br>
+
+                            <h:panelGrid id = "panel" columns = "3" border = "12"
+                                         cellpadding = "10" cellspacing = "1">
+
+
+                                <h:outputText value = "Amerikan Fön..................................400 TL" />
+                                <h:outputText value = "Kesim (Maşa yada Fön Dahil) .......150 TL" />
+                                <h:outputText value = "Topuz.................................................. 100 TL" />
+                                <h:outputText value = "Maşa .......................................................75 TL" />
+                                <h:outputText value = "Boya Dip ..............................................175 TL" />
+                                <h:outputText value = "Boya Değişim.................................... 400 TL" />
+                                <h:outputText value = "Boya INOA ......................................... 200 TL" />
+                                <h:outputText value = "Komple Boya .....................................200 TL" />
+                                <h:outputText value = "Röfle ....................................................350 TL" />
+                                <h:outputText value = "(Başlangıç Fiyatı) Kırma................. 250 TL" />
+                                <h:outputText value = "Babylights .......................................... 350 TL" />
+                                <h:outputText value = "Ombre Sombre ..................................350 TL" />
+                                <h:outputText value = "Pigmentasyon................................... 250 TL" />
+                                <h:outputText value = "Nativebase Keratin Botoks............ 300 TL" />
+                                <h:outputText value = "Keratin Bakım ................................... 200 TL" />
+                                <h:outputText value = "Gelin Saçı .............................................750 TL" />
+                                <h:outputText value = "Eyeliner .................................................450 TL" />
+                                <h:outputText value = "Depliner ............................................... 450 TL" />
+                                <h:outputText value = "Brezilya Fönü ..................................... 400 TL" />
+                                <h:outputText value = "Defrıze ..................................................400 TL" />
+
+                            </h:panelGrid><br></br><br></br><br></br><br></br>
+
+                            <h4 style="text-align:center;"><i><strong><b>MİCRO KAYNAK ADET FİYATLARI</b></strong></i></h4><br></br>
+
+                            <h:panelGrid id = "panel2" columns = "2" border = "12"
+                                         cellpadding = "10" cellspacing = "1">
+
+                                <h:outputText value = "Doğal Saç Adet ........................................................... 12-15TL" />
+
+                                <h:outputText value = "Boyalı Saç Adet ........................................................... 14-18 TL" />
+
+                                <h:outputText value = "Ombreli Saç Adet  ...................................................... 14-18 TL" />
+
+                                <h:outputText  value ="Ombreli Dalgalı Saç Adet ........................................  15-22 TL" />
+
+                                <h:outputText value = "Doğal Dalgalı ve Ombreli Adet ........................  14-15-16 TL" />
+
+
+                            </h:panelGrid><br></br><br></br><br></br><br></br>
+
+                            <h4 style="text-align:center;"><i><strong><b>MAKYAJ KİRPİK FİYAT LİSTESİ</b></strong></i></h4><br></br>
+
+                            <h:panelGrid id = "panel3" columns = "3" border = "12"
+                                         cellpadding = "10" cellspacing = "1">
+
+                                <h:outputText value = "Kalıcı Makyaj Microblading   ............ 1200 TL" />
+                                <h:outputText value = "Dudak Gençleştirme   ........................... 800 TL" />
+                                <h:outputText value = "Gelin Makyajı  ..................................... 750 TL" />
+                                <h:outputText value = "İpek Kirpik  .................................................350 TL" />
+                                <h:outputText value = "Nişan Saçı/ Saç - Makyaj  .................... 500 TL" />
+                                <h:outputText value = "Makyaj  ........................................    150-200 TL" />
+                                <h:outputText value = "EyeLiner  ..................................................   600 TL" />
+                                <h:outputText value = "DeepLiner  ..................................................   450 TL" />
+                                <h:outputText value = "Lifting  ...............................................   300 TL" />
+                                <h:outputText value = "Takma Kirpik  ....................................... 100 TL" />
+                                <h:outputText value = "Kirpik Boyama - Perma   ........................... 100 TL" />
+                                <h:outputText value = "Kaş .........................................................   35 TL" />
+                                <h:outputText value = "Ustura ile kaş .............................................  45 TL" />
+
+                            </h:panelGrid><br></br><br></br><br></br><br></br>
+
+
+                            <h4 style="text-align:center;"><i><strong><b>MANİKÜR AĞDA FİYAT LİSTESİ</b></strong></i></h4><br></br>
+
+                            <h:panelGrid id = "panel4" columns = "3" border = "12"
+                                         cellpadding = "10" cellspacing = "1">
+
+                                <h:outputText value = "Manikür - Pedikür ........................ 50 - 60 TL" />        
+                                <h:outputText value = "NMP Manikür - Pedikür .............. 60 - 75 TL" />
+                                <h:outputText value = "Sheelac / Kalıcı Oje El ........................ 75 TL" />
+                                <h:outputText value = "Sheelac / Kalıcı Oje Ayak .................... 100 TL" />
+                                <h:outputText value = "Kaş Alma - Şekillendirme ......... 50 - 30 TL" />
+                                <h:outputText value = "Depileve Üst Dudak  ............................  10 TL" />
+                                <h:outputText value = "Depileve Çene Yüz ............................... 40 TL" />
+                                <h:outputText value = "İple Dudak Üstü .......................................  10 TL" />
+                                <h:outputText value = "Dudak .................................................500 TL" />
+
+                            </h:panelGrid><br></br><br></br><br></br><br></br><br></br>
+
+
+                        </div>
+
+                    </div>
+                    <div style="height: 25px "></div>
+
+                </div>
+            </div>
+
+
+        </h:form>
+    </h:body>
+</html>

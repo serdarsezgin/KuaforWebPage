@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>randevu</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+    </h:head>
+    <h:body style="background-color:graytext;"></h:body>
+    <h:body>
+        <h:form>
+
+            <div class="container">
+                <img class="mx-auto d-block" src="https://www.ambiance-sticker.com/images/Image/sticker-hair-salon-accessoires-de-coiffure-ambiance-sticker-KC6644.png" alt="Chania" width="160" height="145"></img>
+            </div>    	
+
+
+            <a class="fb-ic mr-3" role="button" href="fb.com" style="color: blue; margin-left: 1400px;" ><i class="fab fa-lg fa-facebook-f"></i></a>
+            <a class="tw-ic mr-3" role="button" href="twitter.com/twitter"><i class="fab fa-lg fa-twitter"></i></a>
+            <a class="ins-ic mr-3" role="button" href="instagram.com" style="color: black"><i class="fab fa-lg fa-instagram"></i></a>
+
+
+
+
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark m-0 sticky-top">
+                <h:link class="navbar-brand" style="color: white;" value="Anasayfa" outcome="/index.xhtml" />
+
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <h:link class = "nav-link pl-3" style="color: white;" value="Randevu Al" outcome="/secured/randevu" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Hakkımızda" outcome="/hakkimizda" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ücretler" outcome="/ucretler" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ekibimiz" outcome="/ekibimiz" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ürünler" outcome="/urunler" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Galeri" outcome="/galeri" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="İletişim" outcome="/iletisim" />
+
+                        </li>
+
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+                        <h:link class="nav-link ml-2" style="color: white;" rendered="#{loginBean.userLoggedIn}" value="#{loginBean.kul_adi_2}" outcome="/iletisim" />
+                        <h:commandLink  class="nav-link pl-3" style="color: white; " rendered="#{!loginBean.userLoggedIn}" value="Giriş Yap" action="/girisyap" />
+                        <h:commandLink  class="nav-link pl-3" style="color: white; " rendered="#{loginBean.userLoggedIn}" value="Çıkış Yap" action="#{loginBean.doLogout()}" />
+                        <h:link class="nav-link pl-3 " style="color: white;" outcome="/secured/admin" ><i class="fas fa-user-cog"></i></h:link>
+
+                    </div>
+
+                </div>
+            </nav>
+
+
+            <div class=" bg-dark col-md-7 animated bounceInRight" style="margin-left: 280px; margin-top: 30px;">
+                <div class="well" style="color:white; ">
+
+                    <p class="header_p" style="color: white; margin-left: 350px; padding-top: 15px;">RANDEVU ALIN</p>
+                    <hr></hr>
+                    <p class="header_p" style="color: white;">GEREKLİ ALANLARI DOLDURUP ONAYLADIĞINIZDA 24 SAAT İÇERİSİNDE SİZE DÖNÜŞ YAPILARAK RANDEVUNUZ ONAYLANACAKTIR.</p>
+                    <hr></hr>
+
+
+                    <div class="form-group1">
+                        <label for="Select">Size nasıl ulaşalım?:</label>
+                        <h:selectOneMenu id="Select" class="form-control" value="#{randevuBean.ranulasim}">
+                            <f:selectItem itemValue="1" itemLabel="Telefon ile"/>
+                            <f:selectItem itemValue="2" itemLabel="Email ile"/>
+                        </h:selectOneMenu>
+                    </div>
+
+
+                    <hr></hr>
+                    <!-- Randevu Tarihi -->
+
+                    <div class="form-group">
+                        <label >Tarih seçiniz!</label>
+                        <h:inputText  a:type="date" value="#{randevuBean.rantarih}">
+
+                        </h:inputText>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label >Saat seçiniz!</label>
+                        <h:inputText a:type="time" value="#"></h:inputText>
+                    </div>
+
+
+
+
+
+                    <!-- Hizmetler -->
+                    <div class="form-group">
+                        <label for="Select">Talep ettiğiniz Hizmetler</label>
+                        <h:selectOneMenu id="Select2" class="form-control" value="#{randevuBean.ranhizmet}">
+                            <f:selectItem itemValue="h1" itemLabel="hizmet"/>
+                            <f:selectItem itemValue="h2" itemLabel="hizmet"/>
+                            <f:selectItem itemValue="h3" itemLabel="hizmet"/>
+                            <f:selectItem itemValue="h4" itemLabel="hizmet"/>
+                            <f:selectItem itemValue="h5" itemLabel="hizmet"/>
+                            <f:selectItem itemValue="h6" itemLabel="hizmet"/>
+                            <f:selectItem itemValue="h7" itemLabel="hizmet"/>
+                            <f:selectItem itemValue="h8" itemLabel="hizmet"/>
+                            <f:selectItem itemValue="h9" itemLabel="hizmet"/>
+
+
+
+                        </h:selectOneMenu>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Select">ŞUBE SEÇİMİ</label>
+                        <h:selectOneMenu id="Select3" class="form-control" value="#{randevuBean.ransube}">
+                            <f:selectItem itemValue="Nişantaşı Şubesi" itemLabel="Nişantaşı Şubesi"/>
+                            <f:selectItem itemValue="Acıbadem Şubesi" itemLabel="Acıbadem Şubesi"/>
+                            <f:selectItem itemValue="Ataşehir Şubesi" itemLabel="Ataşehir Şubesi"/>
+                            <f:selectItem itemValue="Caddebostan Şubesi" itemLabel="Caddebostan Şubesi"/>
+                            <f:selectItem itemValue="Çekmeköy Şubesi" itemLabel="Çekmeköy Şubesi"/>
+                            <f:selectItem itemValue="Florya Şubesi " itemLabel="Florya Şubesi "/>
+                            <f:selectItem itemValue="Bahçeşehir Şubesi" itemLabel="Bahçeşehir Şubesi"/>
+
+
+
+                        </h:selectOneMenu>
+                    </div>
+
+                    <div class="form-group">
+                        <h:inputTextarea class="form-control" a:placeholder="Eklemek istediklerinizi yazınız" value="#{randevuBean.ranavciklama}" cols="30" rows="7" ></h:inputTextarea>
+
+                    </div>
+
+                    <!-- Button Area-->
+                    <div class="checkbox">
+                        <label>
+                            <h:selectManyCheckbox >
+                                <f:selectItem itemValue="c1" itemLabel="Kullanım koşullarını okudum,onaylıyorum." /></h:selectManyCheckbox></label>
+                    </div>
+
+                    <h:commandButton class="btn" value="RANDEVU AL" action="#{randevuBean.randevuEkle()}"></h:commandButton>
+                    <h:commandButton class="btn ml-2" value="İPTAL" action="#" ></h:commandButton>
+
+                    <!-- form end -->
+                </div>
+                <!-- well end -->
+            </div>
+
+
+            <h:outputText value="#{randevuBean.hata}"/>
+        </h:form>
+    </h:body>
+</html>
+

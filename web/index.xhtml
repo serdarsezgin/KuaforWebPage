@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>anasayfa</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+    </h:head>
+    <h:body>
+        <h:form>
+
+
+            <div class="container">
+                <h:body style="background-color:graytext;"></h:body>
+                <img class="mx-auto d-block" src="https://www.ambiance-sticker.com/images/Image/sticker-hair-salon-accessoires-de-coiffure-ambiance-sticker-KC6644.png" alt="Chania" width="160" height="145"></img>
+            </div>
+            
+            
+              <a class="fb-ic mr-3" role="button" href="fb.com" style="color: blue; margin-left: 1400px;" ><i class="fab fa-lg fa-facebook-f"></i></a>
+            <a class="tw-ic mr-3" role="button" href="twitter.com/twitter"><i class="fab fa-lg fa-twitter"></i></a>
+            <a class="ins-ic mr-3" role="button" href="instagram.com" style="color: black"><i class="fab fa-lg fa-instagram"></i></a>
+         
+
+            
+
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark m-0 sticky-top">
+                <h:link class="navbar-brand" style="color: white;" value="Anasayfa" outcome="/index.xhtml" />
+
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <h:link class = "nav-link pl-3" style="color: white;" value="Randevu Al" outcome="/secured/randevu" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Hakkımızda" outcome="/hakkimizda" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ücretler" outcome="/ucretler" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ekibimiz" outcome="/ekibimiz" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Ürünler" outcome="/urunler" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="Galeri" outcome="/galeri" />
+
+                        </li>
+                        <li class="nav-item">
+                            <h:link class="nav-link pl-3" style="color: white;" value="İletişim" outcome="/iletisim" />
+
+                        </li>
+          
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+                        <h:link class="nav-link ml-2" style="color: white;" rendered="#{loginBean.userLoggedIn}" value="#{loginBean.kul_adi_2}" outcome="/iletisim" />
+                        <h:commandLink  class="nav-link pl-3" style="color: white; " rendered="#{!loginBean.userLoggedIn}" value="Giriş Yap" action="/girisyap" />
+                        <h:commandLink  class="nav-link pl-3" style="color: white; " rendered="#{loginBean.userLoggedIn}" value="Çıkış Yap" action="#{loginBean.doLogout()}" />
+                        <h:link class="nav-link pl-3 " style="color: white;" outcome="/secured/admin" ><i class="fas fa-user-cog"></i></h:link>
+                        
+                    </div>
+
+                </div>
+            </nav>
+
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ol> 
+
+                <div class="carousel-inner embed-responsive embed-responsive-21by9">
+                    <div class="carousel-item embed-responsive-item active" style="background-image:url('http://brookesnews.com/wp-content/uploads/2017/11/long-hair.jpg');  background-position-x: 130px; ">
+
+
+
+                        <br></br><br/>
+                        <br/>
+
+                        <h1 class="animated zoomIn" style="font-size:300%; padding-left: 30px;">BİZİMLE
+                            <small class="text-center animated zoomIn">MÜKEMMEL GÖRÜNÜMÜ YAKALAYIN</small>
+
+
+                         </h1> 
+                        <p class="animated zoomIn" style="font-size:150%; padding-left: 100px;"  >UZMAN EKİBİMİZ VE HİZMETLERİMİZ İÇİN </p>
+                        <hr style="border-color: darkslategrey"  width="800px" align="left"></hr>
+                        <h:commandButton style="padding-left: 100px;padding-right: 100px; margin-left: 130px;" class="btn btn-outline-dark btn-lg  animated zoomIn" value="Randevu Al" action="/girisyap"  />
+                        <h:commandButton style="padding-left: 100px;padding-right: 100px; " class="btn btn-outline-dark btn-lg ml-2 animated zoomIn " value="Bize Ulaşın" action="/iletisim"  />
+                    </div>
+
+
+
+                    <div class="carousel-item embed-responsive-item" style="background-image:url('https://hdqwalls.com/download/barbara-palvin-10-1920x1200.jpg')">
+
+
+                        <br/>
+                        <br/>
+
+
+
+
+                    </div>
+                    <div class="carousel-item embed-responsive-item" style="background-image:url('https://www.messika.com/us_en/media/ultranoir/messikablog/thisism/image//m/e/messika-paris-entretien-gigi-hadid-2_1.jpg'); ">
+                    </div>
+
+                </div>
+
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+
+
+
+            </div>   
+
+        </h:form>
+    </h:body>
+</html>
+
+
